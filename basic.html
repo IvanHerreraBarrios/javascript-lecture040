@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript basics</title>
+</head>
+
+<body>
+    <h1>Javascript basics</h1>
+    <ul>
+        <li>Spring</li>
+        <li>Summer</li>
+        <li>Fall</li>
+        <li>Winter</li>
+    </ul>
+    <script>
+    function squarePromise(value){
+      if (typeof value !== "number"){
+         return Promise.reject("Its not a number")
+      }
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          //resolve => return +
+        resolve({
+          //value: value,
+          value, 
+          result: value * value
+        })
+      }, 0 | Math.random()*1000);
+      })
+     
+    }
+
+    async function declaredAsynchronousFunction (){
+      try {
+        console.log("STart, Async function")
+        let obj = await squarePromise(0)
+        console.log("Async function", obj.value, obj.result)
+        obj = await squarePromise(1)
+        console.log("Async function", obj.value, obj.result)
+        obj = await squarePromise(2)
+        console.log("Async function", obj.value, obj.result)
+        obj = await squarePromise(3)
+        console.log("Async function", obj.value, obj.result)
+        obj = await squarePromise(4)
+        console.log("Async function", obj.value, obj.result)
+        obj = await squarePromise(5)
+        console.log("Async function", obj.value, obj.result)
+
+        console.log("End")
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    declaredAsynchronousFunction()
+
+    const expressedAsynchronousFuntion = async() => {
+      try {
+        console.log("STart, Async function")
+        let obj = await squarePromise(6)
+        console.log("Async function", obj.value, obj.result)
+        obj = await squarePromise(7)
+        console.log("Async function", obj.value, obj.result)
+        obj = await squarePromise(8)
+        console.log("Async function", obj.value, obj.result)
+        obj = await squarePromise(9)
+        console.log("Async function", obj.value, obj.result)
+        obj = await squarePromise(10)
+        console.log("Async function", obj.value, obj.result)
+        obj = await squarePromise(11)
+        console.log("Async function", obj.value, obj.result)
+
+        console.log("End")
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    expressedAsynchronousFuntion()
+
+    /*
+
+    // next step, infinity
+    squarePromise(0)
+      .then((obj) => {// funciton
+        //console.log(obj)
+        console.log("Start promise")
+        console.log("Promise", obj.value, obj.result)
+        return squarePromise(1)
+      })
+      .then((obj) => {// funciton
+        //console.log(obj)
+        console.log("Promise", obj.value, obj.result)
+        return squarePromise(2)
+      }) 
+      .then((obj) => {// funciton
+        //console.log(obj)
+        console.log("Promise", obj.value, obj.result)
+        return squarePromise(3)
+      })
+      .then((obj) => {// funciton
+        //console.log(obj)
+        console.log("Promise", obj.value, obj.result)
+        return squarePromise(4)
+      })
+      .then((obj) => {// funciton
+        //console.log(obj)
+        console.log("Promise", obj.value, obj.result)
+        return squarePromise(5)
+      })
+      .then((obj) => {// funciton
+        //console.log(obj)
+        console.log("End", obj.value, obj.result)
+      })
+      .catch(err => console.error(err)) //error
+      */
+    </script>
+</body>
+
+</html>
